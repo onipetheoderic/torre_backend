@@ -1,10 +1,10 @@
 import express from "express";
-const config = require("config");
 import connect from "./db/connect";
 import routes from "./routes";
 
-const port = config.get("port") as number;
-const host = config.get("host") as string;
+const port = 3200;
+const host = "0.0.0.0";
+const dbUri = "mongodb://localhost:27017/rest-api";
 
 const app = express();
 

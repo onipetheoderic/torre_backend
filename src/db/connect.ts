@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import config from "config";
 
 function connect() {
   const dbUri = "mongodb://localhost:27017/rest-api";
