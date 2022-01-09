@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "a3476ce6-928f-423f-9e64-0d75cb61c6b1",
+		"name": "Torre API V1",
+		"description": "Casasoft API Documentation. This is a simple Crud API created with Node Express. Enjoy!!!",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.globals.set(\"TOKEN\", pm.response.json().data.token);\r",
+							"// pm.globals.set(\"EMAIL\", pm.response.json().data.user.user.email);\r",
+							"// pm.globals.set(\"UUID\", pm.response.json().data.user.user.uuid);\r",
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/api/healthcheck",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"api",
+						"healthcheck"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Health Check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/healthcheck",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"healthcheck"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Sep 2021 19:35:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "OK"
+				}
+			]
+		},
+		{
+			"name": "Create Developer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON Response Expected\", function(){\r",
+							"    pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Micheal Bennet\",\r\n    \"position\": \"Mobile Developer\",\r\n    \"picture\": \"https://medical-technology.nridigital.com/medical-technology/medical_technology_may19/is_software_a_blind_spot_for_the_medical_device_industry/391842/Sam_pic___credit_VivaLNK.512_0_1.png\",\r\n    \"skills_interest\": [\r\n      \"mobile development\",\r\n      \"ios development\",\r\n      \"android development\"\r\n    ],\r\n    \"proficient\": [\"English\", \"Spanish\"],\r\n    \"technologies\": [\r\n      \"Es6\",\r\n      \"Javascript\",\r\n      \"React Native\",\r\n      \"Typescript\",\r\n      \"Storybook UI\",\r\n      \"Material UI\",\r\n      \"Bootstrap\",\r\n      \"SASS\",\r\n      \"Docker\",\r\n      \"Kubernetics\",\r\n      \"MongoDB\",\r\n      \"Mysql\",\r\n      \"Postgres\",\r\n      \"HTML5\",\r\n      \"CSS3\",\r\n      \"Redux\",\r\n      \"Redux toolkit\",\r\n      \"Context API\"\r\n    ],\r\n    \"recommendation\": \"4\",\r\n    \"related_experience\": [\r\n      {\r\n        \"position\": \"Mobile Developer\",\r\n        \"duration\": \"Aug 2016 - Nov 2016\",\r\n        \"company\": \"Alibaba\"\r\n      },\r\n      {\r\n        \"position\": \"Team Management\",\r\n        \"duration\": \"Feb 2017 - July 2018\",\r\n        \"company\": \"Theoderic Companies\"\r\n      },\r\n      {\r\n        \"position\": \"Frontend Engineer\",\r\n        \"duration\": \"Aug 2018 - October 2020\",\r\n        \"company\": \"Tinder\"\r\n      }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/api/developers",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"api",
+						"developers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Developer Theoderic",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Onipe Theoderic Ohinoyi\",\r\n    \"position\": \"Fullstack Software Engineer\",\r\n    \"picture\": \"http://users.comnet.aalto.fi/oulasvir/4-boxed.png\",\r\n    \"skills_interest\": [\r\n      \"software development\",\r\n      \"team management\",\r\n      \"graphic design\",\r\n      \"mobile development\",\r\n      \"ios development\",\r\n      \"android development\",\r\n      \"hardware engineering\"\r\n    ],\r\n    \"proficient\": [\"English\", \"Spanish\", \"Yoruba\", \"Hausa\"],\r\n    \"technologies\": [\r\n      \"Node\",\r\n      \"Express\",\r\n      \"Es6\",\r\n      \"Javascript\",\r\n      \"Ansible\",\r\n      \"Terraform\",\r\n      \"React Native\",\r\n      \"Reactjs\",\r\n      \"Nextjs\",\r\n      \"Typescript\",\r\n      \"Storybook UI\",\r\n      \"Material UI\",\r\n      \"Bootstrap\",\r\n      \"SASS\",\r\n      \"Docker\",\r\n      \"Kubernetics\",\r\n      \"MongoDB\",\r\n      \"Mysql\",\r\n      \"Postgres\",\r\n      \"HTML5\",\r\n      \"CSS3\",\r\n      \"Redux\",\r\n      \"Redux toolkit\",\r\n      \"Context API\",\r\n      \"Serverless\",\r\n      \"AWS\",\r\n      \"Ruby on Rails\",\r\n      \"Watir\"\r\n    ],\r\n    \"recommendation\": \"4\",\r\n    \"related_experience\": [\r\n      {\r\n        \"position\": \"Mobile Developer\",\r\n        \"duration\": \"Aug 2016 - Nov 2016\",\r\n        \"company\": \"Jobberman\"\r\n      },\r\n      {\r\n        \"position\": \"Team Management\",\r\n        \"duration\": \"Feb 2017 - July 2018\",\r\n        \"company\": \"Google\"\r\n      },\r\n      {\r\n        \"position\": \"Frontend Engineer\",\r\n        \"duration\": \"Aug 2018 - October 2020\",\r\n        \"company\": \"Craiglist\"\r\n      }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/developers",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"456-6YCNkJZiv6dTu0bYcxmNvH+t/qM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 07:33:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Onipe Theoderic Ohinoyi\",\n    \"position\": \"Fullstack Software Engineer\",\n    \"recommendation\": \"4\",\n    \"picture\": \"http://users.comnet.aalto.fi/oulasvir/4-boxed.png\",\n    \"skills_interest\": [\n        \"software development\",\n        \"team management\",\n        \"graphic design\",\n        \"mobile development\",\n        \"ios development\",\n        \"android development\",\n        \"hardware engineering\"\n    ],\n    \"proficient\": [\n        \"English\",\n        \"Spanish\",\n        \"Yoruba\",\n        \"Hausa\"\n    ],\n    \"technologies\": [\n        \"Node\",\n        \"Express\",\n        \"Es6\",\n        \"Javascript\",\n        \"Ansible\",\n        \"Terraform\",\n        \"React Native\",\n        \"Reactjs\",\n        \"Nextjs\",\n        \"Typescript\",\n        \"Storybook UI\",\n        \"Material UI\",\n        \"Bootstrap\",\n        \"SASS\",\n        \"Docker\",\n        \"Kubernetics\",\n        \"MongoDB\",\n        \"Mysql\",\n        \"Postgres\",\n        \"HTML5\",\n        \"CSS3\",\n        \"Redux\",\n        \"Redux toolkit\",\n        \"Context API\",\n        \"Serverless\",\n        \"AWS\",\n        \"Ruby on Rails\",\n        \"Watir\"\n    ],\n    \"related_experience\": [\n        {\n            \"position\": \"Mobile Developer\",\n            \"duration\": \"Aug 2016 - Nov 2016\",\n            \"company\": \"Jobberman\"\n        },\n        {\n            \"position\": \"Team Management\",\n            \"duration\": \"Feb 2017 - July 2018\",\n            \"company\": \"Google\"\n        },\n        {\n            \"position\": \"Frontend Engineer\",\n            \"duration\": \"Aug 2018 - October 2020\",\n            \"company\": \"Craiglist\"\n        }\n    ],\n    \"_id\": \"61da8fb007adf63ba0b1db3b\",\n    \"eventId\": \"kBLa___cpB\",\n    \"createdAt\": \"2022-01-09T07:33:04.875Z\",\n    \"updatedAt\": \"2022-01-09T07:33:04.875Z\"\n}"
+				},
+				{
+					"name": "Create Developer Barry Jones",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Barry Jones\",\r\n    \"position\": \"Frontend Engineer\",\r\n    \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\r\n    \"skills_interest\": [\r\n    \"frontend development\",\r\n      \"mobile development\",\r\n      \"ios development\",\r\n      \"android development\"\r\n    ],\r\n    \"proficient\": [\"English\", \"Spanish\"],\r\n    \"technologies\": [\r\n      \"Es6\",\r\n      \"Angular\",\r\n      \"Vue\",\r\n      \"Javascript\",\r\n      \"React Native\",\r\n      \"Typescript\",\r\n      \"Storybook UI\",\r\n      \"Material UI\",\r\n      \"Bootstrap\",\r\n      \"SASS\",\r\n      \"Docker\",\r\n      \"Kubernetics\",\r\n      \"MongoDB\",\r\n      \"Mysql\",\r\n      \"Postgres\",\r\n      \"HTML5\",\r\n      \"CSS3\",\r\n      \"Redux\",\r\n      \"Redux toolkit\",\r\n      \"Context API\"\r\n    ],\r\n    \"recommendation\": \"4\",\r\n    \"related_experience\": [\r\n      {\r\n        \"position\": \"Frontend Engineer\",\r\n        \"duration\": \"Aug 2016 - Nov 2016\",\r\n        \"company\": \"Hmedix\"\r\n      },\r\n      {\r\n        \"position\": \"Team Management\",\r\n        \"duration\": \"Feb 2017 - July 2018\",\r\n        \"company\": \"Netflix\"\r\n      },\r\n      {\r\n        \"position\": \"Frontend Engineer\",\r\n        \"duration\": \"Aug 2018 - October 2020\",\r\n        \"company\": \"Hanks\"\r\n      }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/developers",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "970"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3ca-agA3Ygi/dogZAd3P3zvLoPFhqcM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 07:47:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Barry Jones\",\n    \"position\": \"Frontend Engineer\",\n    \"recommendation\": \"4\",\n    \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\n    \"skills_interest\": [\n        \"frontend development\",\n        \"mobile development\",\n        \"ios development\",\n        \"android development\"\n    ],\n    \"proficient\": [\n        \"English\",\n        \"Spanish\"\n    ],\n    \"technologies\": [\n        \"Es6\",\n        \"Angular\",\n        \"Vue\",\n        \"Javascript\",\n        \"React Native\",\n        \"Typescript\",\n        \"Storybook UI\",\n        \"Material UI\",\n        \"Bootstrap\",\n        \"SASS\",\n        \"Docker\",\n        \"Kubernetics\",\n        \"MongoDB\",\n        \"Mysql\",\n        \"Postgres\",\n        \"HTML5\",\n        \"CSS3\",\n        \"Redux\",\n        \"Redux toolkit\",\n        \"Context API\"\n    ],\n    \"related_experience\": [\n        {\n            \"position\": \"Frontend Engineer\",\n            \"duration\": \"Aug 2016 - Nov 2016\",\n            \"company\": \"Hmedix\"\n        },\n        {\n            \"position\": \"Team Management\",\n            \"duration\": \"Feb 2017 - July 2018\",\n            \"company\": \"Netflix\"\n        },\n        {\n            \"position\": \"Frontend Engineer\",\n            \"duration\": \"Aug 2018 - October 2020\",\n            \"company\": \"Hanks\"\n        }\n    ],\n    \"_id\": \"61da932700438d38209aa724\",\n    \"eventId\": \"jitjvU0_kP\",\n    \"createdAt\": \"2022-01-09T07:47:51.869Z\",\n    \"updatedAt\": \"2022-01-09T07:47:51.869Z\"\n}"
+				},
+				{
+					"name": "Create Developer Johnson Paul",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Johnson Paul\",\r\n    \"position\": \"Backend Engineer\",\r\n    \"picture\": \"https://cxl.com/wp-content/uploads/2016/03/nate_munger.png\",\r\n    \"skills_interest\": [\r\n      \"backend development\",\r\n      \"devOps\",\r\n      \"project management\"\r\n    ],\r\n    \"proficient\": [\"English\", \"Spanish\"],\r\n    \"technologies\": [\r\n       \"Node\",\r\n      \"Express\",\r\n      \"Es6\",\r\n      \"Javascript\",\r\n      \"Ansible\",\r\n      \"Terraform\",\r\n      \"Typescript\",\r\n      \"Docker\",\r\n      \"Kubernetics\",\r\n      \"MongoDB\",\r\n      \"Mysql\",\r\n      \"Postgres\",\r\n      \"Serverless\",\r\n      \"AWS\",\r\n      \"Ruby on Rails\"\r\n    ],\r\n    \"recommendation\": \"4\",\r\n    \"related_experience\": [\r\n      {\r\n        \"position\": \"Backend Engineer\",\r\n        \"duration\": \"Aug 2016 - Nov 2016\",\r\n        \"company\": \"Jumia\"\r\n      },\r\n      {\r\n        \"position\": \"Project Manager\",\r\n        \"duration\": \"Feb 2017 - July 2018\",\r\n        \"company\": \"Aliexpress\"\r\n      },\r\n      {\r\n        \"position\": \"Fullstack Software Engineer\",\r\n        \"duration\": \"Aug 2018 - October 2020\",\r\n        \"company\": \"Google\"\r\n      }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/developers",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "854"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"356-RQnSkb8wDZbRJJTElhoDIdw1+Xw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 07:48:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Johnson Paul\",\n    \"position\": \"Backend Engineer\",\n    \"recommendation\": \"4\",\n    \"picture\": \"https://cxl.com/wp-content/uploads/2016/03/nate_munger.png\",\n    \"skills_interest\": [\n        \"backend development\",\n        \"devOps\",\n        \"project management\"\n    ],\n    \"proficient\": [\n        \"English\",\n        \"Spanish\"\n    ],\n    \"technologies\": [\n        \"Node\",\n        \"Express\",\n        \"Es6\",\n        \"Javascript\",\n        \"Ansible\",\n        \"Terraform\",\n        \"Typescript\",\n        \"Docker\",\n        \"Kubernetics\",\n        \"MongoDB\",\n        \"Mysql\",\n        \"Postgres\",\n        \"Serverless\",\n        \"AWS\",\n        \"Ruby on Rails\"\n    ],\n    \"related_experience\": [\n        {\n            \"position\": \"Backend Engineer\",\n            \"duration\": \"Aug 2016 - Nov 2016\",\n            \"company\": \"Jumia\"\n        },\n        {\n            \"position\": \"Project Manager\",\n            \"duration\": \"Feb 2017 - July 2018\",\n            \"company\": \"Aliexpress\"\n        },\n        {\n            \"position\": \"Fullstack Software Engineer\",\n            \"duration\": \"Aug 2018 - October 2020\",\n            \"company\": \"Google\"\n        }\n    ],\n    \"_id\": \"61da935600438d38209aa726\",\n    \"eventId\": \"GX6iXsruTa\",\n    \"createdAt\": \"2022-01-09T07:48:38.325Z\",\n    \"updatedAt\": \"2022-01-09T07:48:38.325Z\"\n}"
+				},
+				{
+					"name": "Create Developer Micheal Bennet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Micheal Bennet\",\r\n    \"position\": \"Mobile Developer\",\r\n    \"picture\": \"https://medical-technology.nridigital.com/medical-technology/medical_technology_may19/is_software_a_blind_spot_for_the_medical_device_industry/391842/Sam_pic___credit_VivaLNK.512_0_1.png\",\r\n    \"skills_interest\": [\r\n      \"mobile development\",\r\n      \"ios development\",\r\n      \"android development\"\r\n    ],\r\n    \"proficient\": [\"English\", \"Spanish\"],\r\n    \"technologies\": [\r\n      \"Es6\",\r\n      \"Javascript\",\r\n      \"React Native\",\r\n      \"Typescript\",\r\n      \"Storybook UI\",\r\n      \"Material UI\",\r\n      \"Bootstrap\",\r\n      \"SASS\",\r\n      \"Docker\",\r\n      \"Kubernetics\",\r\n      \"MongoDB\",\r\n      \"Mysql\",\r\n      \"Postgres\",\r\n      \"HTML5\",\r\n      \"CSS3\",\r\n      \"Redux\",\r\n      \"Redux toolkit\",\r\n      \"Context API\"\r\n    ],\r\n    \"recommendation\": \"4\",\r\n    \"related_experience\": [\r\n      {\r\n        \"position\": \"Mobile Developer\",\r\n        \"duration\": \"Aug 2016 - Nov 2016\",\r\n        \"company\": \"Alibaba\"\r\n      },\r\n      {\r\n        \"position\": \"Team Management\",\r\n        \"duration\": \"Feb 2017 - July 2018\",\r\n        \"company\": \"Theoderic Companies\"\r\n      },\r\n      {\r\n        \"position\": \"Frontend Engineer\",\r\n        \"duration\": \"Aug 2018 - October 2020\",\r\n        \"company\": \"Tinder\"\r\n      }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/developers",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1036"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"40c-mnGCOIW27fhrllMRMpIIQUqjgxo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 07:50:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Micheal Bennet\",\n    \"position\": \"Mobile Developer\",\n    \"recommendation\": \"4\",\n    \"picture\": \"https://medical-technology.nridigital.com/medical-technology/medical_technology_may19/is_software_a_blind_spot_for_the_medical_device_industry/391842/Sam_pic___credit_VivaLNK.512_0_1.png\",\n    \"skills_interest\": [\n        \"mobile development\",\n        \"ios development\",\n        \"android development\"\n    ],\n    \"proficient\": [\n        \"English\",\n        \"Spanish\"\n    ],\n    \"technologies\": [\n        \"Es6\",\n        \"Javascript\",\n        \"React Native\",\n        \"Typescript\",\n        \"Storybook UI\",\n        \"Material UI\",\n        \"Bootstrap\",\n        \"SASS\",\n        \"Docker\",\n        \"Kubernetics\",\n        \"MongoDB\",\n        \"Mysql\",\n        \"Postgres\",\n        \"HTML5\",\n        \"CSS3\",\n        \"Redux\",\n        \"Redux toolkit\",\n        \"Context API\"\n    ],\n    \"related_experience\": [\n        {\n            \"position\": \"Mobile Developer\",\n            \"duration\": \"Aug 2016 - Nov 2016\",\n            \"company\": \"Alibaba\"\n        },\n        {\n            \"position\": \"Team Management\",\n            \"duration\": \"Feb 2017 - July 2018\",\n            \"company\": \"Theoderic Companies\"\n        },\n        {\n            \"position\": \"Frontend Engineer\",\n            \"duration\": \"Aug 2018 - October 2020\",\n            \"company\": \"Tinder\"\n        }\n    ],\n    \"_id\": \"61da93c000438d38209aa728\",\n    \"eventId\": \"sutJrlZkrF\",\n    \"createdAt\": \"2022-01-09T07:50:24.542Z\",\n    \"updatedAt\": \"2022-01-09T07:50:24.542Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Developer Listing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is present\", () => {\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/api/developers",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"api",
+						"developers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Developer Listing",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/api/developers",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8826"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"227a-e+d00S5XzMLEjyJ1xjodgHOA1Jw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 07:50:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Onipe Theoderic Ohinoyi\",\n        \"position\": \"Fullstack Software Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"http://users.comnet.aalto.fi/oulasvir/4-boxed.png\",\n        \"skills_interest\": [\n            \"software development\",\n            \"team management\",\n            \"graphic design\",\n            \"mobile development\",\n            \"ios development\",\n            \"android development\",\n            \"hardware engineering\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\",\n            \"Yoruba\",\n            \"Hausa\"\n        ],\n        \"technologies\": [\n            \"Node\",\n            \"Express\",\n            \"Es6\",\n            \"Javascript\",\n            \"Ansible\",\n            \"Terraform\",\n            \"React Native\",\n            \"Reactjs\",\n            \"Nextjs\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\",\n            \"Serverless\",\n            \"AWS\",\n            \"Ruby on Rails\",\n            \"Watir\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Mobile Developer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Jobberman\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Google\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Craiglist\"\n            }\n        ],\n        \"_id\": \"61da8f2907adf63ba0b1db39\",\n        \"eventId\": \"XOzQ2wle2k\",\n        \"createdAt\": \"2022-01-09T07:30:49.483Z\",\n        \"updatedAt\": \"2022-01-09T07:30:49.483Z\"\n    },\n    {\n        \"name\": \"Onipe Theoderic Ohinoyi\",\n        \"position\": \"Fullstack Software Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"http://users.comnet.aalto.fi/oulasvir/4-boxed.png\",\n        \"skills_interest\": [\n            \"software development\",\n            \"team management\",\n            \"graphic design\",\n            \"mobile development\",\n            \"ios development\",\n            \"android development\",\n            \"hardware engineering\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\",\n            \"Yoruba\",\n            \"Hausa\"\n        ],\n        \"technologies\": [\n            \"Node\",\n            \"Express\",\n            \"Es6\",\n            \"Javascript\",\n            \"Ansible\",\n            \"Terraform\",\n            \"React Native\",\n            \"Reactjs\",\n            \"Nextjs\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\",\n            \"Serverless\",\n            \"AWS\",\n            \"Ruby on Rails\",\n            \"Watir\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Mobile Developer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Jobberman\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Google\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Craiglist\"\n            }\n        ],\n        \"_id\": \"61da8fb007adf63ba0b1db3b\",\n        \"eventId\": \"kBLa___cpB\",\n        \"createdAt\": \"2022-01-09T07:33:04.875Z\",\n        \"updatedAt\": \"2022-01-09T07:33:04.875Z\"\n    },\n    {\n        \"name\": \"Onipe Theoderic Ohinoyi\",\n        \"position\": \"Fullstack Software Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\n        \"skills_interest\": [\n            \"mobile development\",\n            \"ios development\",\n            \"android development\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Es6\",\n            \"Javascript\",\n            \"React Native\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Mobile Developer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Alibaba\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Theoderic Companies\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Tinder\"\n            }\n        ],\n        \"_id\": \"61da923507adf63ba0b1db3d\",\n        \"eventId\": \"kUsZGIilf9\",\n        \"createdAt\": \"2022-01-09T07:43:49.751Z\",\n        \"updatedAt\": \"2022-01-09T07:43:49.751Z\"\n    },\n    {\n        \"name\": \"Micheal Bennet\",\n        \"position\": \"Mobile Developer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\n        \"skills_interest\": [\n            \"mobile development\",\n            \"ios development\",\n            \"android development\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Es6\",\n            \"Javascript\",\n            \"React Native\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Mobile Developer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Alibaba\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Theoderic Companies\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Tinder\"\n            }\n        ],\n        \"_id\": \"61da926c00438d38209aa71e\",\n        \"eventId\": \"NWH0hz_fB6\",\n        \"createdAt\": \"2022-01-09T07:44:44.365Z\",\n        \"updatedAt\": \"2022-01-09T07:44:44.365Z\"\n    },\n    {\n        \"name\": \"Johnson Paul\",\n        \"position\": \"Backend Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://cxl.com/wp-content/uploads/2016/03/nate_munger.png\",\n        \"skills_interest\": [\n            \"backend development\",\n            \"devOps\",\n            \"project management\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Node\",\n            \"Express\",\n            \"Es6\",\n            \"Javascript\",\n            \"Ansible\",\n            \"Terraform\",\n            \"Typescript\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"Serverless\",\n            \"AWS\",\n            \"Ruby on Rails\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Backend Engineer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Jumia\"\n            },\n            {\n                \"position\": \"Project Manager\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Aliexpress\"\n            },\n            {\n                \"position\": \"Fullstack Software Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Google\"\n            }\n        ],\n        \"_id\": \"61da927200438d38209aa720\",\n        \"eventId\": \"voe7GzA4xH\",\n        \"createdAt\": \"2022-01-09T07:44:50.570Z\",\n        \"updatedAt\": \"2022-01-09T07:44:50.570Z\"\n    },\n    {\n        \"name\": \"Barry Jones\",\n        \"position\": \"Frontend Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\n        \"skills_interest\": [\n            \"frontend development\",\n            \"mobile development\",\n            \"ios development\",\n            \"android development\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Es6\",\n            \"Angular\",\n            \"Vue\",\n            \"Javascript\",\n            \"React Native\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Hmedix\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Netflix\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Hanks\"\n            }\n        ],\n        \"_id\": \"61da927600438d38209aa722\",\n        \"eventId\": \"oBud742UDW\",\n        \"createdAt\": \"2022-01-09T07:44:54.898Z\",\n        \"updatedAt\": \"2022-01-09T07:44:54.898Z\"\n    },\n    {\n        \"name\": \"Barry Jones\",\n        \"position\": \"Frontend Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg\",\n        \"skills_interest\": [\n            \"frontend development\",\n            \"mobile development\",\n            \"ios development\",\n            \"android development\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Es6\",\n            \"Angular\",\n            \"Vue\",\n            \"Javascript\",\n            \"React Native\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Hmedix\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Netflix\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Hanks\"\n            }\n        ],\n        \"_id\": \"61da932700438d38209aa724\",\n        \"eventId\": \"jitjvU0_kP\",\n        \"createdAt\": \"2022-01-09T07:47:51.869Z\",\n        \"updatedAt\": \"2022-01-09T07:47:51.869Z\"\n    },\n    {\n        \"name\": \"Johnson Paul\",\n        \"position\": \"Backend Engineer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://cxl.com/wp-content/uploads/2016/03/nate_munger.png\",\n        \"skills_interest\": [\n            \"backend development\",\n            \"devOps\",\n            \"project management\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Node\",\n            \"Express\",\n            \"Es6\",\n            \"Javascript\",\n            \"Ansible\",\n            \"Terraform\",\n            \"Typescript\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"Serverless\",\n            \"AWS\",\n            \"Ruby on Rails\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Backend Engineer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Jumia\"\n            },\n            {\n                \"position\": \"Project Manager\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Aliexpress\"\n            },\n            {\n                \"position\": \"Fullstack Software Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Google\"\n            }\n        ],\n        \"_id\": \"61da935600438d38209aa726\",\n        \"eventId\": \"GX6iXsruTa\",\n        \"createdAt\": \"2022-01-09T07:48:38.325Z\",\n        \"updatedAt\": \"2022-01-09T07:48:38.325Z\"\n    },\n    {\n        \"name\": \"Micheal Bennet\",\n        \"position\": \"Mobile Developer\",\n        \"recommendation\": \"4\",\n        \"picture\": \"https://medical-technology.nridigital.com/medical-technology/medical_technology_may19/is_software_a_blind_spot_for_the_medical_device_industry/391842/Sam_pic___credit_VivaLNK.512_0_1.png\",\n        \"skills_interest\": [\n            \"mobile development\",\n            \"ios development\",\n            \"android development\"\n        ],\n        \"proficient\": [\n            \"English\",\n            \"Spanish\"\n        ],\n        \"technologies\": [\n            \"Es6\",\n            \"Javascript\",\n            \"React Native\",\n            \"Typescript\",\n            \"Storybook UI\",\n            \"Material UI\",\n            \"Bootstrap\",\n            \"SASS\",\n            \"Docker\",\n            \"Kubernetics\",\n            \"MongoDB\",\n            \"Mysql\",\n            \"Postgres\",\n            \"HTML5\",\n            \"CSS3\",\n            \"Redux\",\n            \"Redux toolkit\",\n            \"Context API\"\n        ],\n        \"related_experience\": [\n            {\n                \"position\": \"Mobile Developer\",\n                \"duration\": \"Aug 2016 - Nov 2016\",\n                \"company\": \"Alibaba\"\n            },\n            {\n                \"position\": \"Team Management\",\n                \"duration\": \"Feb 2017 - July 2018\",\n                \"company\": \"Theoderic Companies\"\n            },\n            {\n                \"position\": \"Frontend Engineer\",\n                \"duration\": \"Aug 2018 - October 2020\",\n                \"company\": \"Tinder\"\n            }\n        ],\n        \"_id\": \"61da93c000438d38209aa728\",\n        \"eventId\": \"sutJrlZkrF\",\n        \"createdAt\": \"2022-01-09T07:50:24.542Z\",\n        \"updatedAt\": \"2022-01-09T07:50:24.542Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Developer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// \"message\": \"delete successfully\"\r",
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON Response Expected\", function(){\r",
+							"    pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							"pm.test(\"The response has the required properties\", () => {\r",
+							"    //parse the response json and test three properties\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.message).to.be.eql('delete successfully');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/api/developers/jVTkl_ok52",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"api",
+						"developers",
+						"jVTkl_ok52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Developer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURL}}/api/developer/XOzQ2wle2k",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"api",
+						"developer",
+						"XOzQ2wle2k"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Single Developer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/api/developer/XOzQ2wle2k",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"developer",
+								"XOzQ2wle2k"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"456-nnq2dB39qq+EyLYDAukPXSKcSsE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jan 2022 08:12:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"61da8f2907adf63ba0b1db39\",\n    \"name\": \"Onipe Theoderic Ohinoyi\",\n    \"position\": \"Fullstack Software Engineer\",\n    \"recommendation\": \"4\",\n    \"picture\": \"http://users.comnet.aalto.fi/oulasvir/4-boxed.png\",\n    \"skills_interest\": [\n        \"software development\",\n        \"team management\",\n        \"graphic design\",\n        \"mobile development\",\n        \"ios development\",\n        \"android development\",\n        \"hardware engineering\"\n    ],\n    \"proficient\": [\n        \"English\",\n        \"Spanish\",\n        \"Yoruba\",\n        \"Hausa\"\n    ],\n    \"technologies\": [\n        \"Node\",\n        \"Express\",\n        \"Es6\",\n        \"Javascript\",\n        \"Ansible\",\n        \"Terraform\",\n        \"React Native\",\n        \"Reactjs\",\n        \"Nextjs\",\n        \"Typescript\",\n        \"Storybook UI\",\n        \"Material UI\",\n        \"Bootstrap\",\n        \"SASS\",\n        \"Docker\",\n        \"Kubernetics\",\n        \"MongoDB\",\n        \"Mysql\",\n        \"Postgres\",\n        \"HTML5\",\n        \"CSS3\",\n        \"Redux\",\n        \"Redux toolkit\",\n        \"Context API\",\n        \"Serverless\",\n        \"AWS\",\n        \"Ruby on Rails\",\n        \"Watir\"\n    ],\n    \"related_experience\": [\n        {\n            \"position\": \"Mobile Developer\",\n            \"duration\": \"Aug 2016 - Nov 2016\",\n            \"company\": \"Jobberman\"\n        },\n        {\n            \"position\": \"Team Management\",\n            \"duration\": \"Feb 2017 - July 2018\",\n            \"company\": \"Google\"\n        },\n        {\n            \"position\": \"Frontend Engineer\",\n            \"duration\": \"Aug 2018 - October 2020\",\n            \"company\": \"Craiglist\"\n        }\n    ],\n    \"eventId\": \"XOzQ2wle2k\",\n    \"createdAt\": \"2022-01-09T07:30:49.483Z\",\n    \"updatedAt\": \"2022-01-09T07:30:49.483Z\"\n}"
+				}
+			]
+		}
+	]
+}
