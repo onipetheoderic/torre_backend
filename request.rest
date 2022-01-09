@@ -1,0 +1,298 @@
+###
+GET http://localhost:3200/api/healthcheck
+Content-Type: application/json
+
+
+###
+POST  http://localhost:3200/api/developers
+Content-Type: application/json
+
+{
+    "name": "Onipe Theoderic Ohinoyi",
+    "position": "Fullstack Software Engineer",
+    "picture": "http://users.comnet.aalto.fi/oulasvir/4-boxed.png",
+    "skills_interest": [
+      "software development",
+      "team management",
+      "graphic design",
+      "mobile development",
+      "ios development",
+      "android development",
+      "hardware engineering"
+    ],
+    "proficient": ["English", "Spanish", "Yoruba", "Hausa"],
+    "technologies": [
+      "Node",
+      "Express",
+      "Es6",
+      "Javascript",
+      "Ansible",
+      "Terraform",
+      "React Native",
+      "Reactjs",
+      "Nextjs",
+      "Typescript",
+      "Storybook UI",
+      "Material UI",
+      "Bootstrap",
+      "SASS",
+      "Docker",
+      "Kubernetics",
+      "MongoDB",
+      "Mysql",
+      "Postgres",
+      "HTML5",
+      "CSS3",
+      "Redux",
+      "Redux toolkit",
+      "Context API",
+      "Serverless",
+      "AWS",
+      "Ruby on Rails",
+      "Watir"
+    ],
+    "recommendation": "4",
+    "related_experience": [
+      {
+        "position": "Mobile Developer",
+        "duration": "Aug 2016 - Nov 2016",
+        "company": "Jobberman"
+      },
+      {
+        "position": "Team Management",
+        "duration": "Feb 2017 - July 2018",
+        "company": "Google"
+      },
+      {
+        "position": "Frontend Engineer",
+        "duration": "Aug 2018 - October 2020",
+        "company": "Craiglist"
+      }
+    ]
+}
+
+
+
+
+###
+POST  http://localhost:3200/api/developers
+Content-Type: application/json
+
+{
+    "name": "Micheal Bennet",
+    "position": "Mobile Developer",
+    "picture": "https://medical-technology.nridigital.com/medical-technology/medical_technology_may19/is_software_a_blind_spot_for_the_medical_device_industry/391842/Sam_pic___credit_VivaLNK.512_0_1.png",
+    "skills_interest": [
+      "mobile development",
+      "ios development",
+      "android development"
+    ],
+    "proficient": ["English", "Spanish"],
+    "technologies": [
+      "Es6",
+      "Javascript",
+      "React Native",
+      "Typescript",
+      "Storybook UI",
+      "Material UI",
+      "Bootstrap",
+      "SASS",
+      "Docker",
+      "Kubernetics",
+      "MongoDB",
+      "Mysql",
+      "Postgres",
+      "HTML5",
+      "CSS3",
+      "Redux",
+      "Redux toolkit",
+      "Context API"
+    ],
+    "recommendation": "4",
+    "related_experience": [
+      {
+        "position": "Mobile Developer",
+        "duration": "Aug 2016 - Nov 2016",
+        "company": "Alibaba"
+      },
+      {
+        "position": "Team Management",
+        "duration": "Feb 2017 - July 2018",
+        "company": "Theoderic Companies"
+      },
+      {
+        "position": "Frontend Engineer",
+        "duration": "Aug 2018 - October 2020",
+        "company": "Tinder"
+      }
+    ]
+}
+
+
+###
+POST  http://localhost:3200/api/developers
+Content-Type: application/json
+
+{
+    "name": "Onipe Theoderic Ohinoyi",
+    "position": "Fullstack Software Engineer",
+    "picture": "http://users.comnet.aalto.fi/oulasvir/4-boxed.png",
+    "skills_interest": [
+      "mobile development",
+      "ios development",
+      "android development"
+    ],
+    "proficient": ["English", "Spanish"],
+    "technologies": [
+      "Es6",
+      "Javascript",
+      "React Native",
+      "Typescript",
+      "Storybook UI",
+      "Material UI",
+      "Bootstrap",
+      "SASS",
+      "Docker",
+      "Kubernetics",
+      "MongoDB",
+      "Mysql",
+      "Postgres",
+      "HTML5",
+      "CSS3",
+      "Redux",
+      "Redux toolkit",
+      "Context API"
+    ],
+    "recommendation": "4",
+    "related_experience": [
+      {
+        "position": "Mobile Developer",
+        "duration": "Aug 2016 - Nov 2016",
+        "company": "Alibaba"
+      },
+      {
+        "position": "Team Management",
+        "duration": "Feb 2017 - July 2018",
+        "company": "Theoderic Companies"
+      },
+      {
+        "position": "Frontend Engineer",
+        "duration": "Aug 2018 - October 2020",
+        "company": "Tinder"
+      }
+    ]
+}
+
+
+
+###
+POST  http://localhost:3200/api/developers
+Content-Type: application/json
+
+{
+    "name": "Johnson Paul",
+    "position": "Backend Engineer",
+    "picture": "https://cxl.com/wp-content/uploads/2016/03/nate_munger.png",
+    "skills_interest": [
+      "backend development",
+      "devOps",
+      "project management"
+    ],
+    "proficient": ["English", "Spanish"],
+    "technologies": [
+       "Node",
+      "Express",
+      "Es6",
+      "Javascript",
+      "Ansible",
+      "Terraform",
+      "Typescript",
+      "Docker",
+      "Kubernetics",
+      "MongoDB",
+      "Mysql",
+      "Postgres",
+      "Serverless",
+      "AWS",
+      "Ruby on Rails"
+    ],
+    "recommendation": "4",
+    "related_experience": [
+      {
+        "position": "Backend Engineer",
+        "duration": "Aug 2016 - Nov 2016",
+        "company": "Jumia"
+      },
+      {
+        "position": "Project Manager",
+        "duration": "Feb 2017 - July 2018",
+        "company": "Aliexpress"
+      },
+      {
+        "position": "Fullstack Software Engineer",
+        "duration": "Aug 2018 - October 2020",
+        "company": "Google"
+      }
+    ]
+}
+
+
+###
+POST  http://localhost:3200/api/developers
+Content-Type: application/json
+
+{
+    "name": "Barry Jones",
+    "position": "Frontend Engineer",
+    "picture": "https://s3.amazonaws.com/37assets/svn/1024-original.1e9af38097008ef9573f03b03ef6f363219532f9.jpg",
+    "skills_interest": [
+    "frontend development",
+      "mobile development",
+      "ios development",
+      "android development"
+    ],
+    "proficient": ["English", "Spanish"],
+    "technologies": [
+      "Es6",
+      "Angular",
+      "Vue",
+      "Javascript",
+      "React Native",
+      "Typescript",
+      "Storybook UI",
+      "Material UI",
+      "Bootstrap",
+      "SASS",
+      "Docker",
+      "Kubernetics",
+      "MongoDB",
+      "Mysql",
+      "Postgres",
+      "HTML5",
+      "CSS3",
+      "Redux",
+      "Redux toolkit",
+      "Context API"
+    ],
+    "recommendation": "4",
+    "related_experience": [
+      {
+        "position": "Frontend Engineer",
+        "duration": "Aug 2016 - Nov 2016",
+        "company": "Hmedix"
+      },
+      {
+        "position": "Team Management",
+        "duration": "Feb 2017 - July 2018",
+        "company": "Netflix"
+      },
+      {
+        "position": "Frontend Engineer",
+        "duration": "Aug 2018 - October 2020",
+        "company": "Hanks"
+      }
+    ]
+}
+
+
+
