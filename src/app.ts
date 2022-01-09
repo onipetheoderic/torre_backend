@@ -1,4 +1,4 @@
-import express from "express";
+import express, * as express_test from "express";
 import connect from "./db/connect";
 import routes from "./routes";
 
