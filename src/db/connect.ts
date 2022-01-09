@@ -3,7 +3,7 @@ import config from "config";
 import log from "../logger";
 
 function connect() {
-  const dbUri = config.get("dbUri") as string;
+  const dbUri = "mongodb://localhost:27017/rest-api";
 
   return mongoose
     .connect(dbUri, {
@@ -13,7 +13,7 @@ function connect() {
     .then(() => {
       log.info("Database connected");
     })
-    .catch((error) => {
+    .catch(error => {
       log.error("db error", error);
       process.exit(1);
     });
