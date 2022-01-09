@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import config from "config";
-import log from "../logger";
 
 function connect() {
   const dbUri = "mongodb://localhost:27017/rest-api";
@@ -11,10 +10,10 @@ function connect() {
       useUnifiedTopology: true,
     })
     .then(() => {
-      log.info("Database connected");
+      console.log("Database connected");
     })
     .catch(error => {
-      log.error("db error", error);
+      console.log("db error", error);
       process.exit(1);
     });
 }
