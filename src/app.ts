@@ -1,5 +1,5 @@
 import express from "express";
-import config from "config";
+const config = require("config");
 import log from "./logger";
 import connect from "./db/connect";
 import routes from "./routes";
