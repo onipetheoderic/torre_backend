@@ -1,4 +1,4 @@
-import express, * as express_test from "express";
+const express = require("express");
 import connect from "./db/connect";
 import routes from "./routes";
 
