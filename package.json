@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --config nodemon.json src/app.ts",
-    "start": "tsc src/app.ts -w & pm2 start dist/app.js --watch"
+    "start": "tsc src/app.ts"
   },
   "dependencies": {
     "aws-serverless-express": "^3.4.0",
