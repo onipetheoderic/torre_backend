@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
+import * as mongoose from "mongoose";
+import { connect, ConnectOptions } from "mongoose";
 
-function connect() {
+function connector() {
   const dbUri = "mongodb://localhost:27017/rest-api";
 
-  return mongoose
-    .connect(dbUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+  return connect(dbUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  } as ConnectOptions)
     .then(() => {
       console.log("Database connected");
     })
@@ -17,4 +17,4 @@ function connect() {
     });
 }
 
-export default connect;
+export default connector;
